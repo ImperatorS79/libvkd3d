@@ -1,0 +1,16 @@
+language: c
+
+matrix:
+  include:
+    - env: NAME="Ubuntu 18.04 64bit"
+      sudo: required
+      services:
+        - docker
+      before_install:
+        - docker run -d --name ubuntu-18-04 -v $(pwd):/travis ubuntu:18.04 tail -f /dev/null
+      install:
+        - ./install-ubuntu-deps-docker.sh
+      script:
+        - docker exec -t ubuntu-18-04 bash -c "cd /travis;
+          ./build.sh &&
+          tree"
