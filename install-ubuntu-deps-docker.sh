@@ -15,7 +15,7 @@ docker exec -t ubuntu-18-04 bash -c "apt-get -qq update;
 				     tar -zxvf spirv-headers_1.3.orig.tar.gz;
 				     mv spirv-headers-1.3/include/spirv /usr/include;
 				     wget https://github.com/KhronosGroup/SPIRV-Tools/releases/download/master-tot/SPIRV-Tools-master-linux-RelWithDebInfo.zip;
-				     unzip https://github.com/KhronosGroup/SPIRV-Tools/releases/download/master-tot/SPIRV-Tools-master-linux-RelWithDebInfo.zip -d spirv-tools/;
+				     unzip SPIRV-Tools-master-linux-RelWithDebInfo.zip -d spirv-tools/;
 				     cp spirv-tools/bin/* /usr/bin;
 				     cp -r spirv-tools/include/* /usr/include;
 				     cp -r spirv-tools/lib/* /usr/lib"
